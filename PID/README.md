@@ -10,7 +10,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Installation
 
-1. Upload code via comm port
+1. Upload code PID.ino via comm port
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
