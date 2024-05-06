@@ -40,7 +40,9 @@ Follow the Prerequisites and the read the Usage setting to get started.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-The Raspberry PI is ran using simple python scripts to monitor the state of temprature, water, voltage, currentm, and encoder sensors and convert and display the data in real time. Once the Installation process is fully complete the user can then simply run the final.py script on the Raspberry PI and the script will automatically display and log data into data.csv file in the local folder. When you wish to stop loggin and visulizing data simply close the display window. The data can then be exported via the usb port to a computer and viewed in excel or any other program. 
+The Raspberry PI is ran using simple python scripts to monitor the state of temprature, water, voltage, current, and encoder sensors and convert and display the data in real time. Once the Installation process is fully complete the user can then simply run the final.py script on the Raspberry PI and the script will automatically display and log data into data.csv file in the local folder. When you wish to stop loggin and visulizing data simply close the display window. The data can then be exported via the usb port to a computer and viewed in excel or any other program. 
+
+Right now only the MarineEnergyBasic.py code works as it there was a problem implenting the previous solution with multiple python threads and a work around is being thought of to display this data visually over time. 
 
 
 
@@ -51,9 +53,11 @@ The Raspberry PI is ran using simple python scripts to monitor the state of temp
 <!-- CONTACT -->
 ## Contact
 
-Your Name- mabluhm71@comcast.net
+Marshall Bluhm - mabluhm71@comcast.net
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Dr. Craig Hill - cshill@d.umn.edu
+
+Project Link: [https://github.com/hillcraig//Benchtop_PTO_MarineEnergy](https://github.com/github_username/repo_name)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -64,6 +68,7 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 * Dr. Craig Hill
 * Den Ramsey
+* Marshall Bluhm
 * Grant Koeler
 * Dakota Benigni
 * Nick Klaustermeier
