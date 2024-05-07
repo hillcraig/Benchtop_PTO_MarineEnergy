@@ -8,6 +8,7 @@ from gpiozero import LED
 import pandas as pd
 import threading
 import time
+import sys
 
 # Constants
 waterLED = LED(27) #What GPIO pin that the waterlight LED is on the raspberry pi
@@ -21,8 +22,8 @@ df = pd.DataFrame()
 def add_data():
     global df
     torque, temp1, temp2, voltage, current, water = run_Sensor()
-    if water > 0.1:
-        water()
+    if water > 1:
+        waterON()
     input_rpm = get_rpm()
     gen_rpm = input_rpm *gearbox_ratio
     # add rpm to concat call below here
@@ -34,7 +35,13 @@ def add_data():
     else:
         resistance = voltage/current
 
-    df = pd.concat([df, pd.DataFrame({'Voltage': [voltage], 'Current':[current], "Gen RPM": [gen_rpm], "Time (Seconds)": [current_time], "Output Power": [output_power], "Resistance":[resistance], "Generator Temp": [temp1], "Gearbox Temp": [temp2]})], ignore_index=True)
+    
+    df = pd.concat([df, pd.DataFrame({'Voltage (V)': [voltage], 'Current (A)':[current], "Gen RPM": [gen_rpm], "Time (Seconds)": [current_time], "Output Power (W)": [output_power], "Resistance (Ohms)":[resistance], "Generator Temp (C)": [temp1], "Gearbox Temp (C)": [temp2], "Water Sensor Voltage": [water]})], ignore_index=True)
+    i=1
+    while i < len(df):
+        sys.stdout.write('\033[F')  # Move cursor up one line
+        sys.stdout.write('\033[K') 
+        i+=1 # Clear the line
     print(df, end ="\r")
     write_dataframe_to_csv(df, 'data.csv')
 
@@ -42,7 +49,7 @@ def add_data():
 def write_dataframe_to_csv(dataframe, filepath):
     dataframe.to_csv(filepath, index=False, header=True)
 
-def water():
+def waterON():
     waterLED.on()
     
 
