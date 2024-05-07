@@ -35,7 +35,7 @@ def add_data():
         resistance = voltage/current
 
     df = pd.concat([df, pd.DataFrame({'Voltage': [voltage], 'Current':[current], "Gen RPM": [gen_rpm], "Time (Seconds)": [current_time], "Output Power": [output_power], "Resistance":[resistance], "Generator Temp": [temp1], "Gearbox Temp": [temp2]})], ignore_index=True)
-    print(df)
+    print(df, end ="\r")
     write_dataframe_to_csv(df, 'data.csv')
 
 
