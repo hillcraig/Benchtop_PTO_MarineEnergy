@@ -44,6 +44,7 @@ The Raspberry PI is ran using simple python scripts to monitor the state of temp
 
 Right now only the MarineEnergyBasic.py code works as it there was a problem implenting the previous solution with multiple python threads and a work around is being thought of to display this data visually over time. 
 
+All libraries to run this code are installed in a python virtual enviroment on the Raspberry PI so the python script must be ran in this virtual enviroment. There is a shell script called DAQ.sh that will automatically run the virtual enviroment and run the MarineEnergyBasic.py script. To change what script is run simply change the name of the python script in the DAQ.sh to the desired python script.  
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
